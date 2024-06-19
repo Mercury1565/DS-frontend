@@ -1,0 +1,44 @@
+.universityPortal {
+    font-family: Arial, sans-serif;
+   
+  }
+  
+  .portalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #005792;
+    color: #ffffff;
+  }
+  
+  .universityName {
+    margin: 0;
+  }
+  
+  .loginNavigation .loginLink {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #007bff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .loginNavigation .loginLink:hover {
+    background-color: #0056b3;
+  }
+  
+  .portalMain {
+    padding: 20px;
+    text-align: center;
+    
+  }
+  body{
+    background-image: url('../images/universitySample.jpg');
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 100vh; /* Full viewport height */
+    width: 100vw;
+  }
