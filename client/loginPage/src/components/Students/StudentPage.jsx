@@ -1,23 +1,24 @@
 import React from 'react'
-import './StudentPage.css'
+import { Link } from 'react-router-dom'
+
 function StudentPage() {
   return (
     <div>
         <header className='studentHeader'>
-            <a href=''>Student Dashboard</a>
+            <Link to='/studentDashboard'>Student Dashboard</Link>
     
             <div className="studentLink">
-                <a href="">Logout</a>
-                
+                <Link to='/logout'>Logout</Link>
             </div>
         </header>
         <aside className='asideBar'>
-            <ul>
-                <li><a href="">Course Registration</a></li>
-                <li><a href="">Cost sharing Form</a></li>
-                <li><a href="">Result</a></li>
-                <li><a href="">Tution fee</a></li>
-                <li><a href="">Exams </a></li>
+            <ul> 
+                <li><Link to='/courseRegistration'>Course Registration</Link></li>
+                <li><Link to='/costSharingForm'>Cost sharing Form</Link></li>
+                <li><Link to='/result'>Result</Link></li>
+                <li><Link to='/tuitionFee'>Tuition fee</Link></li>
+                <li><Link to='/exams'>Exams</Link></li>
+                <li><Link to='/studentRegistration'>Student Registration</Link></li>
             </ul>
         </aside>
     </div>

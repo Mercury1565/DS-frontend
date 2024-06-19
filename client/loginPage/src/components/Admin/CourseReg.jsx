@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import '../../styles/CourseReg.css';
 
 function CourseReg() {
-//   const [course, setCourse] = useState({ department: '', courseName: '', year: '', semester: '', creditHour: '' });
-  const [courses, setCourses] = useState([]);
-// const [course, setCourse] = useState({ department: '', courseName: '', year: '', semester: '', creditHour: '', prerequisites: [''], corequisites: [''] });
+const [courses, setCourses] = useState([]);
 const [course, setCourse] = useState({ department: '', courseName: '', year: '', semester: '', creditHour: '', prerequisites: [''], corequisites: [''] });
 
 const handleMultiInputChange = (e, index, field) => {
@@ -16,6 +14,7 @@ const handleMultiInputChange = (e, index, field) => {
 const handleRemoveFields = (index, field) => {
   const newValues = [...course[field]];
   newValues.splice(index, 1);
+
   setCourse({ ...course, [field]: newValues });
 };
 
@@ -64,10 +63,10 @@ const handleRemoveFields = (index, field) => {
             Prerequisites:
             {course.prerequisites.map((prerequisite, index) => (
             <div key={index}>
-                <button type="button" onClick={() => handleRemoveFields(index, 'prerequisites')}>Remove</button>
-                <input className='courseReg-input' type="text" name="prerequisites" value={prerequisite} onChange={(e) => handleMultiInputChange(e, index, 'prerequisites')} />
+              <button type="button" onClick={() => handleRemoveFields(index, 'prerequisites')}>Remove</button>
+              <input className='courseReg-input' type="text" name="prerequisites" value={prerequisite} onChange={(e) => handleMultiInputChange(e, index, 'prerequisites')} />
             </div>
-            ))}
+          ))}
             <button type="button" onClick={() => handleAddFields('prerequisites')}>Add Prerequisite</button>
           </label>
         <button className='courseReg-button' type="submit">Add Course</button>
@@ -87,16 +86,19 @@ const handleRemoveFields = (index, field) => {
         <tbody>
         {courses.map((course, index) => (
             <tr key={index}>
-            <td className="courseReg-table-data c-td">{course.department}</td>
+            <td className="courseReg-table-data     {course.prerequisites.map((prerequisite, index) => (
+            <div key={index}>{prerequisite}</div>
+            ))}
+        </td>c-td">{course.department}</td>
             <td className="courseReg-table-data c-td">{course.courseName}</td>
             <td className="courseReg-table-data c-td">{course.year}</td>
             <td className="courseReg-table-data c-td">{course.semester}</td>
             <td className="courseReg-table-data c-td">{course.creditHour}</td>
             <td className="courseReg-table-data">
-                {course.prerequisites.map((prerequisite, index) => (
-                <div key={index}>{prerequisite}</div>
-                ))}
-            </td>
+            {course.prerequisites.map((prerequisite, index) => (
+            <div key={index}>{prerequisite}</div>
+            ))}
+        </td>
             </tr>
         ))}
         </tbody>
