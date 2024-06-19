@@ -1,0 +1,39 @@
+/* StudentNavBar.css */
+
+.Student_asideBar {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    /* width: 00px; */
+    height: 140px;
+    background-color: #f5f5f5;
+  }
+  
+  .Student_asideBar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .Student_asideBar li {
+    margin-bottom: 1em;
+  }
+  
+  .Student_asideBar a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+  
+  .Student_asideBar a:hover {
+    color: #007BFF;
+  }
+  
+  .Student_asideBar .studentPage {
+    margin-top: auto;
+    text-align: right;
+    color: #333;
+    font-size: 1.2em;
+  }
+  .studentPage {
+    font-size: 10em; 
+  }

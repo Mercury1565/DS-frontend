@@ -1,34 +1,17 @@
-import { useState } from 'react'
-import { Route, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router , Routes , Route , Link} from "react-router-dom"
 
 import LoginPage from './components/loginSignup/LoginPage.jsx'
-import AdminPage from './components/Admin/AdminPage.jsx'
-import StudentPage from './components/Students/StudentPage.jsx'
-import TeacherREG from './components/Admin/TeacherREG.jsx'
-import StudentREG from './components/Admin/StudentREG.jsx'
-import TeacherPage from './components/Teacher/TeacherPage.jsx'
 import StudentProfile from './components/Students/StudentProfile.jsx'
-import TeacherProfile from './components/Teacher/TeacherProfile.jsx'
-import AdminProfile from './components/Admin/AdminProfile.jsx'
+import StudentNavBar from "./components/Students/StudentNavBar.jsx"
 
 function App() {
 
   return (
-    <>
-      {/* <LoginPage /> */}
+    <div className = "App">
 
-      {/* <AdminPage /> */}
-      {/* <StudentPage /> */}
-      {/* <TeacherPage /> */}
+      <StudentNavBar/>
 
-      {/* <TeacherREG /> */}
-      {/* <StudentREG /> */}  
-      
-      {/* <AdminProfile /> */}
-      {/* <TeacherProfile /> */}
-      {/* <StudentProfile /> */}
-      
-    </>
+    </div>
   )
 }
 

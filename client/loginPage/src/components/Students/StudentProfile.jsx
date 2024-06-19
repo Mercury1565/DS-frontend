@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/StudentProfile.css';
+import StudentNavBar from './StudentNavBar.jsx'
+
 
 function StudentProfile() {
   const [studentProfile, setStudentProfile] = useState({
@@ -23,6 +25,7 @@ function StudentProfile() {
 
   return (
     <div className="studentProfilePage">
+
       <h2>Student Profile</h2>
       <div className="StudentProfileDetails">
         <p><strong>Name:</strong> {studentProfile.name}</p>
