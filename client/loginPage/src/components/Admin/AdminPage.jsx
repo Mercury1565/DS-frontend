@@ -24,7 +24,7 @@ function AdminPage() {
         </header>
         <aside className='AdminasideBar'>
             <ul>
-                <li><Link to="/add-student"> Student</Link></li>
+                <li><Link to="/add-student">Add Student</Link></li>
                 <li><Link to="/add-teacher">Add Teacher</Link></li>
                 <li><Link to="/add-course">Add Course</Link></li>
                 <li><Link to="/admin-page">Profile</Link></li>

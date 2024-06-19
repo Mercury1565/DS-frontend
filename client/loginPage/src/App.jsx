@@ -10,14 +10,16 @@ import StudentProfile from './components/Students/StudentProfile.jsx'
 import AdminProfile from './components/Admin/AdminProfile.jsx'
 import StudentGrades from './components/Students/StudentGrades.jsx'
 import SubmitGrades from './components/Teacher/SubmitGrades.jsx'
+import HomePage from './components/HomePage/HomePage.jsx'
 
 function App() {
 
   return (
     <>
-      <LoginPage />
+      {/* <LoginPage /> */}
 
       {/* <AdminPage /> */}
+      <HomePage />
       {/* <StudentPage /> */}
       {/* <TeacherPage /> */}
 
