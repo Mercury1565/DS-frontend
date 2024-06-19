@@ -1,0 +1,55 @@
+*{
+ padding: 0px;
+ margin: 0px;
+}
+.adminHeader{
+    background-color: #d3dbe7;
+    line-height: 70px;
+    padding-left: 20px;
+}
+.adminLink{
+    float: right;
+    padding-right: 20px;
+    font-size: 20px;
+    border: 10px;
+    border-radius: 2px;
+    border-color: hsl(210, 90%, 70%);
+}
+
+.adminHeader a{
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
+.adminLink a{
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+
+}
+.adminHeader a:hover{
+    color: rgb(56, 54, 215);
+}
+.AdminasideBar ul{
+    background-color: hsl(195, 53%, 79%);
+    width: 16%;
+    min-width: 12%;
+    height: 100%;
+    position: fixed;
+    padding-top: 3%;
+    text-align: center;
+}
+.AdminasideBar ul li{
+    list-style: none;
+    padding-bottom: 30px;
+    font-size: 18px;
+    padding: 20px;
+ }
+
+ .AdminasideBar ul li a {
+    text-decoration: none;
+    color: rgb(60, 54, 54);
+ }
+ .AdminasideBar ul li a:hover{
+    color: rgb(56, 54, 215);
+ }

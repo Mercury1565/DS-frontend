@@ -1,36 +1,38 @@
 *{
- padding: 0px;
- margin: 0px;
+    padding: 0px;
+    margin: 0px;
 }
-.adminHeader{
+.TeacherHeader{
     background-color: #d3dbe7;
     line-height: 70px;
     padding-left: 20px;
 }
-.adminLink{
+.TeacherLink{
     float: right;
     padding-right: 20px;
+    /* line-height: 70px; */
     font-size: 20px;
     border: 10px;
     border-radius: 2px;
     border-color: hsl(210, 90%, 70%);
+    /* background-color: hsl(210, 90%, 70%); */
 }
 
-.adminHeader a{
+.TeacherHeader a{
     text-decoration: none;
     color: black;
     font-size: 30px;
 }
-.adminLink a{
+.TeacherLink a{
     text-decoration: none;
     color: black;
     font-size: 22px;
 
 }
-.adminHeader a:hover{
+.TeacherHeader a:hover{
     color: rgb(56, 54, 215);
 }
-.asideBar ul{
+.TeacherasideBar ul{
     background-color: hsl(195, 53%, 79%);
     width: 16%;
     min-width: 12%;
@@ -39,18 +41,18 @@
     padding-top: 3%;
     text-align: center;
 }
-.asideBar ul li{
+.TeacherasideBar ul li{
     list-style: none;
     padding-bottom: 30px;
     font-size: 18px;
     padding: 20px;
- }
+}
 
- .asideBar ul li a {
+.TeacherasideBar ul li a {
     text-decoration: none;
     color: rgb(60, 54, 54);
     
- }
- .asideBar ul li a:hover{
+}
+.TeacherasideBar ul li a:hover{
     color: rgb(56, 54, 215);
- }
+}

@@ -1,0 +1,45 @@
+/* StudentProfilePage.css */
+
+.studentProfilePage {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .studentProfilePage h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .StudentProfileDetails {
+    line-height: 1.6;
+  }
+  
+  .StudentProfileDetails p {
+    margin: 10px 0;
+    color: #666;
+  }
+  
+  .StudentProfileDetails strong {
+    color: #333;
+  }
+  
+  .StudentProfileDetails h3 {
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .StudentProfileDetails ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .StudentProfileDetails li {
+    background-color: #e9e9e9;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+  }

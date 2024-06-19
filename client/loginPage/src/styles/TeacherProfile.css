@@ -1,0 +1,43 @@
+.teacherProfilePage {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .teacherProfilePage h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .TeacherProfileDetails {
+    line-height: 1.6;
+  }
+  
+  .TeacherProfileDetails p {
+    margin: 10px 0;
+    color: #666;
+  }
+  
+  .TeacherProfileDetails strong {
+    color: #333;
+  }
+  
+  .TeacherProfileDetails h3 {
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .TeacherProfileDetails ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .TeacherProfileDetails li {
+    background-color: #e9e9e9;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+  }
