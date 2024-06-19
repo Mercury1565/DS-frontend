@@ -1,0 +1,72 @@
+.courseReg-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1em;
+  margin-bottom: 1em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.courseReg-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This makes the container take up the full height of the viewport */
+  }
+
+.courseReg-form {
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.courseReg-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.5em;
+  }
+  
+.courseReg-input[type="text"] {
+    width: 100%;  /* Adjust this to change the width of the input fields */
+    padding: 0.5em;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+  }
+  
+.courseReg-button {
+    padding: 0.5em 1em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+.courseReg-button:hover {
+    background-color: #0056b3;
+  }
+  
+.courseReg-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2em;
+  }
+  
+/* .c-th, .c-td {
+    padding: 0.5em;
+    border: 1px solid #ddd;
+  } */
+  
+.courseReg.thead {
+    background-color: #f2f2f2;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+  }
+.courseReg-table-header, .courseReg-table-data {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+  }
