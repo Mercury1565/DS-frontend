@@ -3,7 +3,9 @@ import '../../styles/TeacherREG.css';
 
 function TeacherRegistrationForm() {
     const [formData, setFormData] = useState({
-        fullName: '',
+        FirstName: '',
+        LastName: '',
+
         department: '',
         email: '',
         password: '',
@@ -28,10 +30,15 @@ function TeacherRegistrationForm() {
 
     return (
         <form className='teacherForm' onSubmit={handleSubmit}>
-            <label className='TeacherFormLabel'>Full Name</label>
-            <input className='TeacherRegistration' name="fullName" type="text" placeholder="Full Name" value={formData.fullName} onChange={handleChange} />
+            <label className='TeacherFormLabel'>First Name</label>
+            <input className='TeacherRegistration' name="FirstName" type="text" placeholder="First Name" value={formData.FirstName} onChange={handleChange} />
+
+            <label className='TeacherFormLabel'>Last Name</label>
+            <input className='TeacherRegistration' name="LastName" type="text" placeholder="Last Name" value={formData.LastName} onChange={handleChange} />
+
             <label className='TeacherFormLabel'>Department</label>
             <input className='TeacherRegistration' name="department" type="text" placeholder="Department" value={formData.department} onChange={handleChange} />
+
             <label className='TeacherFormLabel'>Email</label>
             <input className='TeacherRegistration' name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} />
             <label className='TeacherFormLabel'>Password</label>

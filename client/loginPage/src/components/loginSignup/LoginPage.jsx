@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import '../../styles/LoginPage.css'
 
 function LoginForm() {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
@@ -23,15 +23,15 @@ function LoginForm() {
     <div className="container">
       <h1 className='loginHeader'>Login</h1>
       <form className='Loginform' onSubmit={handleSubmit}>
-        <label className='loginLabel' htmlFor="email">Email:</label>
+        <label className='loginLabel' htmlFor="username">Username:</label>
         <input 
           className='loginInput' 
-          type="email" 
-          id="email" 
-          name="email" 
-          value={email} 
-          onChange={handleEmailChange} 
-        />
+          type="text" 
+          id="username" 
+          name="username" 
+          value={username} 
+          onChange={handleUsernameChange} 
+        />      
         <label className='loginLabel' htmlFor="password">Password:</label>
         <input 
           className='loginInput' 

@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import SubmitGrades from './SubmitGrades';
+import AnnounceExam from './AnnounceExam';
+import TeacherProfile from './TeacherProfile';
+
 import '../../styles/TeacherPage.css';
 
 function TeacherPage() {
@@ -16,19 +20,29 @@ function TeacherPage() {
 
   return (
     <div>
-      <header className='TeacherHeader'>
-        <Link to="/dashboard" onClick={() => handleNavigation('Dashboard')}>Teacher Dashboard</Link>
-        <div className="TeacherLink">
-          <button onClick={handleLogout}>Logout</button>
-        </div>
-      </header>
-      <aside className='TeacherasideBar'>
-        <ul>
-          <li><Link to="/grade-submit" onClick={() => handleNavigation('Course Registration')}> Submit Grade </Link></li>
-          <li><Link to="/announcement" onClick={() => handleNavigation('Cost Sharing Form')}> Announcement</Link></li>
-          <li><Link to="/profile" onClick={() => handleNavigation('profile') }>Profile </Link> </li>
-        </ul>
-      </aside>
+      <Router>
+          <header className='TeacherHeader'>
+            <Link to="/Teacherprofile" onClick={() => handleNavigation('Dashboard')}>Teacher Dashboard</Link>
+            <div className="TeacherLink">
+              <button onClick={handleLogout}>Logout</button>
+            </div>
+          </header>
+          <aside className='TeacherasideBar'>
+            <ul>
+              <li><Link to="/grade-submit" onClick={() => handleNavigation('Course Registration')}> Submit Grade </Link></li>
+              <li><Link to="/announcement" onClick={() => handleNavigation('Cost Sharing Form')}> Announcement</Link></li>
+              <li><Link to="/Teacherprofile" onClick={() => handleNavigation('profile') }>Profile </Link> </li>
+            </ul>
+          </aside>
+          
+          <Routes>
+              <Route path="/grade-submit" element={<SubmitGrades />} />
+              <Route path="/announcement" element={<AnnounceExam />} />
+              <Route path="/Teacherprofile" element={<TeacherProfile />} />
+
+          </Routes>
+      </Router>
+          
     </div>
   );
 }
