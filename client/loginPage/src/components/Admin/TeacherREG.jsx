@@ -1,32 +1,52 @@
-import React from 'react'
-import 
+import React, { useState } from 'react';
+import '../../styles/TeacherREG.css';
 
-function TeacherREG() {
-  return (
-    <div>
-        <h1>Teacher Registration</h1>
-        <form>
-            <label>Full Name</label>
-            <input type="text" placeholder="Full Name" />
-            <label>Department</label>
-            <input type="text" placeholder="Department" />
-            <label>Email</label>
-            <input type="email" placeholder="Email" />
-            <label>Password</label>
-            <input type="password" placeholder="Password" />
-            <label>Nationality</label>
-            <input type="text" placeholder="Nationality" />
-            <label>Phone Number</label>
-            <input type="text" placeholder="Phone Number" />
-            <label>Address</label>
-            <input type="text" placeholder="Address" />
+function TeacherRegistrationForm() {
+    const [formData, setFormData] = useState({
+        fullName: '',
+        department: '',
+        email: '',
+        password: '',
+        nationality: '',
+        phoneNumber: '',
+        address: ''
+    });
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Here you would typically send formData to your server
+        console.log(formData);
+    };
+
+    return (
+        <form className='teacherForm' onSubmit={handleSubmit}>
+            <label className='TeacherFormLabel'>Full Name</label>
+            <input className='TeacherRegistration' name="fullName" type="text" placeholder="Full Name" value={formData.fullName} onChange={handleChange} />
+            <label className='TeacherFormLabel'>Department</label>
+            <input className='TeacherRegistration' name="department" type="text" placeholder="Department" value={formData.department} onChange={handleChange} />
+            <label className='TeacherFormLabel'>Email</label>
+            <input className='TeacherRegistration' name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} />
+            <label className='TeacherFormLabel'>Password</label>
+            <input className='TeacherRegistration' name="password" type="password" placeholder="Password" value={formData.password} onChange={handleChange} />
+            <label className='TeacherFormLabel'>Nationality</label>
+            <input className='TeacherRegistration' name="nationality" type="text" placeholder="Nationality" value={formData.nationality} onChange={handleChange} />
+            <label className='TeacherFormLabel'>Phone Number</label>
+            <input className='TeacherRegistration' name="phoneNumber" type="text" placeholder="Phone Number" value={formData.phoneNumber} onChange={handleChange} />
+            <label className='TeacherFormLabel'>Address</label>
+            <input className='TeacherRegistration' name="address" type="text" placeholder="Address" value={formData.address} onChange={handleChange} />
+            <button className='submitButton' type="submit">Submit</button>
         </form>
-
-    </div>
-  )
+    );
 }
 
-export default TeacherREG
+export default TeacherRegistrationForm;
 
 
