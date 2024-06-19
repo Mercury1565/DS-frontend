@@ -1,4 +1,6 @@
-.teacherProfilePage {
+/* StudentProfilePage.css */
+
+.studentProfilePage {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
@@ -7,35 +9,35 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
   
-  .teacherProfilePage h2 {
+  .studentProfilePage h2 {
     color: #333;
     margin-bottom: 20px;
   }
   
-  .TeacherProfileDetails {
+  .StudentProfileDetails {
     line-height: 1.6;
   }
   
-  .TeacherProfileDetails p {
+  .StudentProfileDetails p {
     margin: 10px 0;
     color: #666;
   }
   
-  .TeacherProfileDetails strong {
+  .StudentProfileDetails strong {
     color: #333;
   }
   
-  .TeacherProfileDetails h3 {
+  .StudentProfileDetails h3 {
     margin-top: 20px;
     color: #333;
   }
   
-  .TeacherProfileDetails ul {
+  .StudentProfileDetails ul {
     list-style-type: none;
     padding: 0;
   }
   
-  .TeacherProfileDetails li {
+  .StudentProfileDetails li {
     background-color: #e9e9e9;
     margin: 5px 0;
     padding: 10px;
