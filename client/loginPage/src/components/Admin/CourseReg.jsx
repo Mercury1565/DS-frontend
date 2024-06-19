@@ -2,18 +2,38 @@ import React, { useState } from 'react';
 import '../../styles/CourseReg.css';
 
 function CourseReg() {
-  const [course, setCourse] = useState({ department: '', courseName: '', year: '', semester: '', creditHour: '' });
+//   const [course, setCourse] = useState({ department: '', courseName: '', year: '', semester: '', creditHour: '' });
   const [courses, setCourses] = useState([]);
+// const [course, setCourse] = useState({ department: '', courseName: '', year: '', semester: '', creditHour: '', prerequisites: [''], corequisites: [''] });
+const [course, setCourse] = useState({ department: '', courseName: '', year: '', semester: '', creditHour: '', prerequisites: [''], corequisites: [''] });
+
+const handleMultiInputChange = (e, index, field) => {
+  const newValues = [...course[field]];
+  newValues[index] = e.target.value;
+  setCourse({ ...course, [field]: newValues });
+};
+
+const handleRemoveFields = (index, field) => {
+  const newValues = [...course[field]];
+  newValues.splice(index, 1);
+  setCourse({ ...course, [field]: newValues });
+};
 
   const handleChange = (e) => {
     setCourse({ ...course, [e.target.name]: e.target.value });
   };
 
+
+  const handleAddFields = (field) => {
+    setCourse({ ...course, [field]: [...course[field], ''] });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setCourses([...courses, course]);
-    setCourse({ department: '', courseName: '', year: '', semester: '', creditHour: '' });
+    setCourse({ department: '', courseName: '', year: '', semester: '', creditHour: '', prerequisites: [''], corequisites: [''] });
   };
+
 
   return (
     <div className='courseReg-container'>
@@ -21,7 +41,7 @@ function CourseReg() {
         <h1>Course Registration</h1>
       <form className = 'courseReg-form' onSubmit={handleSubmit}>
         <label className = 'courseReg-label'>
-          Department:
+          DepartmentID:
           <input className='courseReg-input' type="text" name="department" value={course.department} onChange={handleChange} />
         </label>
         <label className = 'courseReg-label'>
@@ -40,6 +60,16 @@ function CourseReg() {
           Credit Hour:
           <input className='courseReg-input' type="text" name="creditHour" value={course.creditHour} onChange={handleChange} />
         </label>
+        <label className='courseReg-label'>
+            Prerequisites:
+            {course.prerequisites.map((prerequisite, index) => (
+            <div key={index}>
+                <button type="button" onClick={() => handleRemoveFields(index, 'prerequisites')}>Remove</button>
+                <input className='courseReg-input' type="text" name="prerequisites" value={prerequisite} onChange={(e) => handleMultiInputChange(e, index, 'prerequisites')} />
+            </div>
+            ))}
+            <button type="button" onClick={() => handleAddFields('prerequisites')}>Add Prerequisite</button>
+          </label>
         <button className='courseReg-button' type="submit">Add Course</button>
       </form>
       </div>
@@ -51,6 +81,7 @@ function CourseReg() {
             <th className="courseReg-table-header c-th">Year</th>
             <th className="courseReg-table-header c-th">Semester</th>
             <th className="courseReg-table-header c-th">Credit Hour</th>
+            <th className="courseReg-table-header c-th">Prerequisites</th>
         </tr>
         </thead>
         <tbody>
@@ -61,6 +92,11 @@ function CourseReg() {
             <td className="courseReg-table-data c-td">{course.year}</td>
             <td className="courseReg-table-data c-td">{course.semester}</td>
             <td className="courseReg-table-data c-td">{course.creditHour}</td>
+            <td className="courseReg-table-data">
+                {course.prerequisites.map((prerequisite, index) => (
+                <div key={index}>{prerequisite}</div>
+                ))}
+            </td>
             </tr>
         ))}
         </tbody>
