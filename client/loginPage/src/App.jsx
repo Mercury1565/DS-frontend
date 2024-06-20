@@ -16,11 +16,11 @@ function App() {
 
   return (
     <>
-      {/* <LoginPage /> */}
+      <LoginPage />
 
       {/* <HomePage /> */}
       {/* <AdminPage /> */}
-      <StudentPage />
+      {/* <StudentPage /> */}
       {/* <TeacherPage /> */}
 
       {/* <TeacherREG /> */}
