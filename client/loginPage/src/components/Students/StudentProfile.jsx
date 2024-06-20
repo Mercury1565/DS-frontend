@@ -1,26 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/StudentProfile.css';
 import StudentPage from './StudentPage';
+import { studentProfileFetch } from '../../bridge/profile';
 
 
 function StudentProfile() {
-  const [studentProfile, setStudentProfile] = useState({
-    name: '',
-    id: '',
-    email: '',
-    department: '',
-    YearSemester: [],
-  });
+  const [studentProfile, setStudentProfile] = useState({});
 
   useEffect(() => {
-    const fetchedProfile = {
-      name: 'John Doe',
-      id: 'S12345678',
-      email: 'john.doe@university.edu',
-      department: 'Computer Science',
-      YearSemester: ["2023/24", "2nd Year 1st Semester"],
-    };
-    setStudentProfile(fetchedProfile);
+    async function fetchData() {
+      try {
+        const respone = await studentProfileFetch();
+        setStudentProfile(respone);
+      }
+      catch (error) {
+        alert("We can not fetch profile");
+      }
+    }
+    fetchData();
   }, []);
 
   return (
@@ -33,11 +30,9 @@ function StudentProfile() {
           <p><strong>ID:</strong> {studentProfile.id}</p>
           <p><strong>Email:</strong> {studentProfile.email}</p>
           <p><strong>Department:</strong> {studentProfile.department}</p>
-          <h3>Academic Year</h3>
+          <h3>Year</h3>
           <ul>
-            {studentProfile.YearSemester.map((YearSemester, index) => (
-              <li key={index}>{YearSemester}</li>
-            ))}
+            <li>{studentProfile.academic_year}</li>
           </ul>
         </div>
       </div>
