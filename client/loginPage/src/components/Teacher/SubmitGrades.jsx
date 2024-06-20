@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/SubmitGradesStyle.css';
+import TeacherPage from './TeacherPage';
 
 function SubmitGrades() {
   const [year, setYear] = useState('');
@@ -36,6 +37,8 @@ es
   };
 
   return (
+    <>
+    <TeacherPage />
     <div>
       <h1 className = "SubmitGrade-h1">Submit Grades</h1>
       <div className="selector-card">
@@ -92,6 +95,7 @@ es
       </div>
 
     </div>
+    </>
   );
 }
 

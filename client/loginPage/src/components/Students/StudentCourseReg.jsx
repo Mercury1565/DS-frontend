@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import '../../styles/StudentCourseReg.css'; 
+import StudentPage from './StudentPage';
 
 
-function CourseRegistrationForm() {
+function StudentCourseReg() {
   const [selectedCourses, setSelectedCourses] = useState([]);
 
   const courses = [
-    { id: 'CSE101', creditHour: 3, ects: 6 },
-    { id: 'MAT202', creditHour: 4, ects: 8 },
-    { id: 'PHY303', creditHour: 3, ects: 6 },
+    { id: 'CSE101', creditHour: 3 },
+    { id: 'MAT202', creditHour: 4 },
+    { id: 'PHY303', creditHour: 3},
   ];
 
   const handleSelectCourse = (courseId) => {
@@ -30,6 +31,8 @@ function CourseRegistrationForm() {
   const isAllSelected = selectedCourses.length === courses.length;
 
   return (
+    <>
+    <StudentPage />
     <form className="courseRegForm">
       <h3 className="formTitle">Course Registration</h3>
       <div className="selectAllWrapper">
@@ -52,13 +55,15 @@ function CourseRegistrationForm() {
             onChange={() => handleSelectCourse(course.id)}
           />
           <label htmlFor={course.id} className="courseLabel">
-            {course.id} - Credit Hour: {course.creditHour}, ECTS: {course.ects}
+            {course.id} - Credit Hour: {course.creditHour}
           </label>
         </div>
       ))}
       <button type="submit" className="submitBtn">Register</button>
     </form>
+    </>
+
   );
 }
 
-export default CourseRegistrationForm;
+export default StudentCourseReg;

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import '../../styles/StudentREG.css';
+import AdminPage from './AdminPage';
 
-function StudentRegistrationInputForm() {
+function StudentREG() {
     const [formData, setFormData] = useState({
         FirstName: '',
         LastName: '',
@@ -28,6 +29,8 @@ function StudentRegistrationInputForm() {
     };
 
     return (
+        <>
+        <AdminPage />   
         <form className='studentForm' onSubmit={handleSubmit}>
             <label className='StudentFormLabel'>First Name</label>
             <input className='StudentRegistrationInput' name="FirstName" type="text" placeholder="Full Name" value={formData.fullName} onChange={handleChange} />
@@ -50,8 +53,10 @@ function StudentRegistrationInputForm() {
 
             <button className='StudentsubmitButton' type="submit">Submit</button>
         </form>
+
+        </>
     );
 }
 
-export default StudentRegistrationInputForm;
+export default StudentREG;
 

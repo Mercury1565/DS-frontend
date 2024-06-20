@@ -34,7 +34,7 @@
     text-align: center;
     
   }
-  body{
+  .backgroundimageclass{
     background-image: url('../images/universitySample.jpg');
     background-size: cover; /* Ensure the image covers the entire area */
     background-position: center; /* Center the image */

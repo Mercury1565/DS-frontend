@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import '../../styles/AnnounceExamStyle.css';
+import TeacherPage from './TeacherPage';
+
+
 
 function AnnounceExam() {
   const [exam, setExam] = useState({ course: '', year: '', semester: '', date: '', time: '' });
@@ -16,6 +19,8 @@ function AnnounceExam() {
   };
 
   return (
+    <>
+    <TeacherPage />
     <div className="announce-exam">
         <div className="form-card">
             <form onSubmit={handleSubmit}>
@@ -62,6 +67,7 @@ function AnnounceExam() {
         </div>
       ))}
     </div>
+    </>
   );
 }
 

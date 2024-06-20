@@ -1,13 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import '../../styles/HomePage.css'; // Make sure to create a corresponding CSS file
+import '../../styles/HomePage.css'; 
 
 
 function HomePage() {
   return (
     <> 
-    <div className='backgroundimageclass'>
-        <Router>
+       <div className='backgroundimageclass'>
             <div className="universityPortal">
             <header className="portalHeader">
                 <h1 className="universityName">University Name</h1>
@@ -20,7 +19,6 @@ function HomePage() {
                 <h2>Please log in to access your account and resources.</h2>
             </main>
             </div>
-        </Router> 
 
         </div>  
     </>

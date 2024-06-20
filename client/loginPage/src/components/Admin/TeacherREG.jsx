@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import '../../styles/TeacherREG.css';
+import AdminPage from './AdminPage';
 
-function TeacherRegistrationForm() {
+
+function TeacherREG() {
     const [formData, setFormData] = useState({
         FirstName: '',
         LastName: '',
@@ -29,6 +31,8 @@ function TeacherRegistrationForm() {
     };
 
     return (
+        <>
+        <AdminPage />
         <form className='teacherForm' onSubmit={handleSubmit}>
             <label className='TeacherFormLabel'>First Name</label>
             <input className='TeacherRegistration' name="FirstName" type="text" placeholder="First Name" value={formData.FirstName} onChange={handleChange} />
@@ -51,9 +55,10 @@ function TeacherRegistrationForm() {
             <input className='TeacherRegistration' name="address" type="text" placeholder="Address" value={formData.address} onChange={handleChange} />
             <button className='submitButton' type="submit">Submit</button>
         </form>
+        </>
     );
 }
 
-export default TeacherRegistrationForm;
+export default TeacherREG;
 
 

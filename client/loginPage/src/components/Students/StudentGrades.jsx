@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../../styles/StudentGradesStyle.css';
+import StudentPage from './StudentPage';
+
 
 function StudentGrades() {
   const [student, setStudent] = useState({ name: 'Hermon', id: '123' });
@@ -36,6 +38,8 @@ function StudentGrades() {
   };
 
   return (
+    <>
+    <StudentPage />
     <div>
       <p>Student Name: {student.name}</p>
       <p>Student ID: {student.id}</p>
@@ -69,6 +73,8 @@ function StudentGrades() {
         </div>
       ))}
     </div>
+    </>
+
   );
 }
 
