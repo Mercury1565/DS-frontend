@@ -18,9 +18,9 @@ function App() {
     <>
       {/* <LoginPage /> */}
 
+      {/* <HomePage /> */}
       {/* <AdminPage /> */}
-      <HomePage />
-      {/* <StudentPage /> */}
+      <StudentPage />
       {/* <TeacherPage /> */}
 
       {/* <TeacherREG /> */}
