@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../../styles/LoginPage.css'
+import '../../styles/LoginPage.css';
+import { login } from '../../bridge/login';
 
 function LoginPage() {
   const [username, setUsername] = useState('');
@@ -15,8 +16,8 @@ function LoginPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle the login logic here
-    console.log(email, password);
+    login(username, password)
+    
   };
 
   return (

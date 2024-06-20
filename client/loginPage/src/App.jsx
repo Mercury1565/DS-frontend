@@ -22,13 +22,11 @@ function App() {
 
   return (
     <>
-      <Router>
-
-    {/* <Router>  */}
       {/* <LoginPage /> */}
 
-      {/* <AdminPage /> */}
       {/* <HomePage /> */}
+      {/* <AdminPage /> */}
+      <HomePage />
       {/* <StudentPage /> */}
       {/* <TeacherPage /> */}
 
