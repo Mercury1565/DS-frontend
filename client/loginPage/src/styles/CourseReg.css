@@ -1,3 +1,9 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Container for the entire form */
 .courseReg-container {
   margin-top: 60px; /* Adjust based on navbar height */
   display: flex;
@@ -6,6 +12,7 @@
   flex-direction: column;
 }
 
+/* Card for the form */
 .courseReg-card {
   margin: 20px;
   padding: 20px;
@@ -15,20 +22,41 @@
   max-width: 600px; /* Adjust based on preference */
 }
 
+/* Form styling */
 .courseReg-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.courseReg-input, .courseReg-button {
+/* Grouping each label-input pair */
+.courseReg-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Label styling */
+.courseReg-label {
+  width: 30%; /* Adjust the width as needed */
+  font-weight: bold;
+}
+
+/* Input styling */
+.courseReg-input {
+  width: 65%; /* Adjust the width as needed */
   padding: 10px;
   margin-top: 5px;
   border-radius: 4px;
   border: 1px solid #ccc;
 }
 
+/* Button styling */
 .courseReg-button {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
   background-color: #007bff;
   color: white;
   cursor: pointer;
@@ -38,6 +66,7 @@
   background-color: #0056b3;
 }
 
+/* Table styling */
 .courseReg-table {
   margin-top: 20px;
   border-collapse: collapse;
