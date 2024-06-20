@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import StudentGrades from './StudentGrades';
-import StudentProfile from './StudentProfile';
-import StudentCourseReg from './StudentCourseReg';
 
 import '../../styles/StudentPage.css';
 
