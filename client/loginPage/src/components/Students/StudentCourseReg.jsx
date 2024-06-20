@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import '../../styles/StudentCourseReg.css'; 
-import StudentPage from './StudentPage';
+import { courseResgistration, registartionCourse } from '../../bridge/courseRegistration';
 
 
 function StudentCourseReg() {
   const [selectedCourses, setSelectedCourses] = useState([]);
+  const [offeredCourses, setOfferedCourses] = useState([]);
+  const [year, setYear] = useState('');
+  const [semester, setSemester] = useState('');
+  const [showCourses, setShowCourses] = useState(false);
+  const [selectAll, setSelectAll] = useState(false);
 
   const courses = [
     { id: 'CSE101', creditHour: 3 },
@@ -30,6 +35,41 @@ function StudentCourseReg() {
 
   const isAllSelected = selectedCourses.length === courses.length;
 
+  const handleSemesterChange = (e) => {
+    setSemester(e.target.value);
+    setSelectedCourses([]);
+    setShowCourses(false);
+    setSelectAll(false);
+  };
+
+  const handleShowCourses = async () => {
+    // setShowCourses(true);
+    try {
+      const courses = await courseResgistration(year, semester);
+      setShowCourses(true);
+      console.log(courses);
+      setOfferedCourses(courses);
+    }
+    catch (error) {
+      alert(error.response.data.detail);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(selectedCourses);
+    for(var i=0; i<selectedCourses.length; i++) {
+      try {
+        await registartionCourse(selectedCourses[i]);
+      }
+      catch (e) {
+        alert("Course Registration Error");
+        return;
+      }
+    }
+    // Handle the form submission here
+  };
+  console.log(offeredCourses);
   return (
     <>
     <StudentPage />
@@ -54,9 +94,22 @@ function StudentCourseReg() {
             checked={selectedCourses.includes(course.id)}
             onChange={() => handleSelectCourse(course.id)}
           />
-          <label htmlFor={course.id} className="courseLabel">
-            {course.id} - Credit Hour: {course.creditHour}
-          </label>
+          <label className="courseLabel" htmlFor="selectAll">Select All</label>
+          {offeredCourses.map((course, index) => (
+            
+            <div key={index} className="courseOption">
+              <input
+                type="checkbox"
+                id={course.id}
+                className="courseCheckbox"
+                checked={selectedCourses.includes(course.id)}
+                onChange={() => handleSelectCourse(course.id)}
+              />
+              <label htmlFor={course.id} className="courseLabel">
+                {course.name} {course.credit_hour},
+              </label>
+            </div>
+          ))}
         </div>
       ))}
       <button type="submit" className="submitBtn">Register</button>
