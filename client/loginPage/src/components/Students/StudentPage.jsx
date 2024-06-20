@@ -20,29 +20,22 @@ function StudentPage() {
 
   return (
     <>
-      <Router> 
           <header className='studentHeader'>
-            <Link to="/Student-dashboard" onClick={() => handleNavigation('Dashboard')}>Student Dashboard</Link>
+            <span className='SpanforStudent'>Student Dashboard</span>
             <div className="studentLink">
-              <button onClick={handleLogout}>Logout</button>
+              <Link to="/logout">Logout</Link>
             </div>
+            
           </header>
           <aside className='StudentasideBar'>
             <ul>
               <li><Link to="/course-registration" onClick={() => handleNavigation('Course Registration')}>Course Registration</Link></li>
               <li><Link to="/Grade-result" onClick={() => handleNavigation('Grade Result')}>Grade Result</Link></li>
               <li><Link to="/upcomig-exams" onClick={() => handleNavigation('Exams')}>Upcomig Exams</Link></li>
-              <li><Link to="/Student-dashboard" onClick={() => handleNavigation('profile')}>Profile</Link></li>
+              <li><Link to="/Studentprofile" onClick={() => handleNavigation('profile')}>Profile</Link></li>
             </ul>
           </aside>
 
-          <Routes>
-              <Route path="/Grade-result" element={<StudentGrades />} />
-              <Route path="/Student-dashboard" element={<StudentProfile />} />
-              <Route path="/course-registration" element={<StudentCourseReg />} />
-          </Routes>
-
-      </Router>
     </>
   );
 }

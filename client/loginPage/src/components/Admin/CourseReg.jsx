@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../../styles/CourseReg.css';
+import AdminPage from './AdminPage';
+
 
 function CourseReg() {
 const [courses, setCourses] = useState([]);
@@ -35,6 +37,8 @@ const handleRemoveFields = (index, field) => {
 
 
   return (
+    <>
+    <AdminPage/>
     <div className='courseReg-container'>
         <div className='courseReg-card'>
         <h1>Course Registration</h1>
@@ -104,6 +108,9 @@ const handleRemoveFields = (index, field) => {
         </tbody>
       </table>
     </div>
+
+    </>
+
   );
 }
 

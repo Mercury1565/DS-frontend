@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/TeacherProfile.css';
+import TeacherPage from './TeacherPage';
+
 
 function TeacherProfile() {
   const [teacherProfile, setTeacherProfile] = useState({
@@ -24,6 +26,8 @@ function TeacherProfile() {
   }, []);
 
   return (
+    <>
+    <TeacherPage />
     <div className="teacherProfilePage">
       <h2>Teacher Profile</h2>
       <div className="TeacherProfileDetails">
@@ -34,6 +38,8 @@ function TeacherProfile() {
         
       </div>
     </div>
+    </>
+
   );
 }
 

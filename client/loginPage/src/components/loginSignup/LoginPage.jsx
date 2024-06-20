@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../../styles/LoginPage.css';
-import { login } from '../../bridge/login';
+// import { login } from '../../bridge/login';
 
-function LoginForm() {
+function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -16,7 +16,7 @@ function LoginForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    login(username, password)
+    // login(username, password)
     
   };
 
@@ -48,4 +48,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default LoginPage;

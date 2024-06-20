@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../../styles/StudentGradesStyle.css';
+import StudentPage from './StudentPage';
+
 
 function StudentGrades() {
   const [student, setStudent] = useState({ name: 'Hermon', id: '123' });
@@ -36,11 +38,13 @@ function StudentGrades() {
   };
 
   return (
-    <div>
+    <>
+    <StudentPage />
+    <div className='StudentGradesContainer'>
       <p>Student Name: {student.name}</p>
       <p>Student ID: {student.id}</p>
       {grades.map((semester, index) => (
-        <div key={index}>
+        <div  key={index}>
           <h3>Year {semester.year}, Semester {semester.semester}</h3>
           <table className="student-grades-table">
             <thead>
@@ -69,6 +73,8 @@ function StudentGrades() {
         </div>
       ))}
     </div>
+    </>
+
   );
 }
 

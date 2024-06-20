@@ -11,15 +11,12 @@ function AdminPage() {
   const [state, setState] = useState();
 
   return (
-    <>
-      <Router>
+      <>
 
         <header className='adminHeader'>
-            <Link to='/admin-page'>Admin Dashboard</Link>
-
+            <span className='SpanforAdmin'>Admin Dashboard</span>
             <div className="adminLink">
                 <Link to="/logout">Logout</Link>
-                
             </div>
         </header>
         <aside className='AdminasideBar'>
@@ -27,21 +24,11 @@ function AdminPage() {
                 <li><Link to="/add-student">Add Student</Link></li>
                 <li><Link to="/add-teacher">Add Teacher</Link></li>
                 <li><Link to="/add-course">Add Course</Link></li>
-                <li><Link to="/admin-page">Profile</Link></li>
+                <li><Link to="/admin-profile">Profile</Link></li>
             </ul>
         </aside>
-        <Routes>
-         
-          <Route path="/add-student" element={<StudentREG />} />
-          <Route path="/add-teacher" element={<TeacherREG />} />
-          <Route path="/add-course" element={<CourseReg />} />
-          <Route path="/admin-page" element={<AdminProfile />} />
-          
-          
-          {/* Define other routes as needed */}
-        </Routes>
-    </Router> 
-    </>
+        
+      </>
   )
 }
 

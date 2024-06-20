@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
-import SubmitGrades from './SubmitGrades';
-import AnnounceExam from './AnnounceExam';
-import TeacherProfile from './TeacherProfile';
 
 import '../../styles/TeacherPage.css';
 
@@ -20,12 +17,12 @@ function TeacherPage() {
 
   return (
     <div>
-      <Router>
           <header className='TeacherHeader'>
-            <Link to="/Teacherprofile" onClick={() => handleNavigation('Dashboard')}>Teacher Dashboard</Link>
+            <span className='Spanforteacher'>Teacher Dashboard</span>
             <div className="TeacherLink">
-              <button onClick={handleLogout}>Logout</button>
+               <Link to="/logout">Logout</Link>
             </div>
+
           </header>
           <aside className='TeacherasideBar'>
             <ul>
@@ -33,15 +30,8 @@ function TeacherPage() {
               <li><Link to="/announcement" onClick={() => handleNavigation('Cost Sharing Form')}> Announcement</Link></li>
               <li><Link to="/Teacherprofile" onClick={() => handleNavigation('profile') }>Profile </Link> </li>
             </ul>
-          </aside>
+          </aside> 
           
-          <Routes>
-              <Route path="/grade-submit" element={<SubmitGrades />} />
-              <Route path="/announcement" element={<AnnounceExam />} />
-              <Route path="/Teacherprofile" element={<TeacherProfile />} />
-
-          </Routes>
-      </Router>
           
     </div>
   );
