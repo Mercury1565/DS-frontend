@@ -21,6 +21,13 @@
 
 }
 
+.studentHeader{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top:0;
+}
+
 .studentHeader a{
     text-decoration: none;
     color: black;
@@ -34,6 +41,11 @@
 }
 .studentHeader a:hover{
     color: rgb(56, 54, 215);
+}
+.StudentasideBar{
+    position: fixed;
+    left: 0;
+    top:70px;
 }
 .StudentasideBar ul{
     background-color: hsl(195, 53%, 79%);

@@ -13,6 +13,13 @@
     padding-left: 20px;
 }
 
+.TeacherHeader{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top:0;
+}
+
 .TeacherLink{
     float: right;
     padding-right: 20px;
@@ -36,6 +43,13 @@
 .TeacherHeader a:hover{
     color: rgb(56, 54, 215);
 }
+
+.TeacherasideBar{
+    position: fixed;
+    left: 0;
+    top:70px;
+}
+
 .TeacherasideBar ul{
     background-color: hsl(195, 53%, 79%);
     width: 16%;
