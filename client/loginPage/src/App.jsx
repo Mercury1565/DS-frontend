@@ -1,10 +1,5 @@
-import { useState } from 'react'
 import {BrowserRouter as Router,Routes, Route } from 'react-router-dom'
-
 import LoginPage from './components/loginSignup/LoginPage.jsx'
-import AdminPage from './components/Admin/AdminPage.jsx'
-import StudentPage from './components/Students/StudentPage.jsx'
-import TeacherPage from './components/Teacher/TeacherPage.jsx'
 import HomePage from './components/HomePage/HomePage.jsx'
 import StudentREG  from './components/Admin/StudentREG.jsx'
 import TeacherREG from './components/Admin/TeacherREG.jsx'
@@ -22,26 +17,7 @@ function App() {
 
   return (
     <>
-      {/* <LoginPage /> */}
-
-      {/* <HomePage /> */}
-      {/* <AdminPage /> */}
-      <HomePage />
-      {/* <StudentPage /> */}
-      {/* <TeacherPage /> */}
-
-      {/* <TeacherREG /> */}
-      {/* <StudentREG />   */}
-
-      {/* <AdminProfile /> */}
-      {/* <TeacherProfile /> */}
-      {/* <StudentProfile /> */}
-
-      {/* hermon */}
-      {/* <StudentGrades /> */}
-      {/* <SubmitGrades /> */}
-
-      {/* </Router> */}
+    <Router>
 
         <Routes>
 
@@ -69,6 +45,8 @@ function App() {
             <Route path="/Grade-result" element={<StudentGrades />} />
             <Route path="/course-registration" element={<StudentCourseReg />} />
             <Route path="/Studentprofile" element={<StudentProfile />} />
+
+            <Route path="/logout" element={<HomePage />} />
              
         </Routes>
       </Router>

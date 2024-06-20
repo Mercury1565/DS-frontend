@@ -16,6 +16,16 @@
     border-color: hsl(210, 90%, 70%);
 }
 
+.SpanforAdmin{
+    font-size: 22px;
+    padding-left: 20px;
+}
+.adminHeader{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top:0;
+}
 .adminHeader a{
     text-decoration: none;
     color: black;
@@ -29,6 +39,11 @@
 }
 .adminHeader a:hover{
     color: rgb(56, 54, 215);
+}
+.AdminasideBar{
+    position: fixed;
+    left: 0;
+    top:70px;
 }
 .AdminasideBar ul{
     background-color: hsl(195, 53%, 79%);

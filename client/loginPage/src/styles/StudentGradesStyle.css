@@ -1,37 +1,31 @@
-/* StudentGradesStyle.css */
+.StudentGradesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 .student-grades-table {
-    width: 100%;
-    margin-bottom: 20px;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  }
-  
-  .student-grades-table th,
-  .student-grades-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .student-grades-table thead tr {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  .student-grades-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .student-grades-table tbody tr:hover {
-    background-color: #ddd;
-    cursor: pointer;
-  }
-  
-  .student-grades-table tbody tr:last-child {
-    border-bottom: 2px solid #ddd;
-  }
-  .cgpa-row td:first-child {
-    font-weight: bold;
-  }
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 80%; /* Adjust based on preference */
+}
+
+.student-grades-table th,
+.student-grades-table td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+  padding-right: 40px;
+  padding-left: 30px;
+}
+
+.student-grades-table th {
+  background-color: #c3b7d8;
+}
+
+.cgpa-row td {
+  font-weight: bold;
+  text-align: center;
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/LoginPage.css';
-import { login } from '../../bridge/login';
+// import { login } from '../../bridge/login';
 
 function LoginPage() {
   const [username, setUsername] = useState('');
@@ -16,7 +16,7 @@ function LoginPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    login(username, password)
+    // login(username, password)
     
   };
 

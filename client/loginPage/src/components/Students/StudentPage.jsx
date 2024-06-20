@@ -21,10 +21,11 @@ function StudentPage() {
   return (
     <>
           <header className='studentHeader'>
-            <h2>Student Dashboard</h2>
+            <span className='SpanforStudent'>Student Dashboard</span>
             <div className="studentLink">
-              <button onClick={handleLogout}>Logout</button>
+              <Link to="/logout">Logout</Link>
             </div>
+            
           </header>
           <aside className='StudentasideBar'>
             <ul>

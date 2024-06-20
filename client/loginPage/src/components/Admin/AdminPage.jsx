@@ -14,11 +14,9 @@ function AdminPage() {
       <>
 
         <header className='adminHeader'>
-            <h2>Admin Dashboard</h2>
-
+            <span className='SpanforAdmin'>Admin Dashboard</span>
             <div className="adminLink">
                 <Link to="/logout">Logout</Link>
-                
             </div>
         </header>
         <aside className='AdminasideBar'>

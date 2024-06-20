@@ -18,10 +18,11 @@ function TeacherPage() {
   return (
     <div>
           <header className='TeacherHeader'>
-            <Link to="/Teacherprofile" onClick={() => handleNavigation('Dashboard')}>Teacher Dashboard</Link>
+            <span className='Spanforteacher'>Teacher Dashboard</span>
             <div className="TeacherLink">
-              <button onClick={handleLogout}>Logout</button>
+               <Link to="/logout">Logout</Link>
             </div>
+
           </header>
           <aside className='TeacherasideBar'>
             <ul>
