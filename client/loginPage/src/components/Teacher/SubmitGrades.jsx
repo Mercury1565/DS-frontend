@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../../styles/SubmitGradesStyle.css';
 import TeacherPage from './TeacherPage';
+import { filterStudent } from '../../bridge/studentsBasedoncourse';
+import { submitGrade } from '../../bridge/submitGrade';
 
 function SubmitGrades() {
   const [year, setYear] = useState('');
@@ -8,19 +10,20 @@ function SubmitGrades() {
   const [students, setStudents] = useState([]);
   const [courseId, setCourseId] = useState('');  
 
-  // Dummy data
-  const allStudents = [
-    { id: 1, name: 'Student 1', year: '1', semester: '1', grade: '' },
-    { id: 2, name: 'Student 2', year: '1', semester: '1', grade: '' },
-    { id: 3, name: 'Student 3', year: '1', semester: '2', grade: '' },
-    // Add more students as needed
-  ];
+  ;
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // Filter students based on year and semester
-    const filteredStudents = allStudents.filter(student => student.year === year && student.semester === semester);
-    setStudents(filteredStudents);
+    try {
+      const reponse = await filterStudent(courseId, year, semester);
+      setStudents(reponse);
+      alert("Students fetched successfully");
+    }
+    catch (error) {
+      alert("Error fetching students")
+      console.log(error);
+    }
   };
 
   const handleGradeChange = (event, studentId) => {
@@ -31,9 +34,20 @@ function SubmitGrades() {
   };
 
   const submitGrades = () => {
-    // Here you can handle the submission of all grad    .dropdown {
-es
-    console.log(students);
+    // Submit grades for all students`/students/${studentId}/enrollments/${enrollmentId}/`
+    students.forEach(async student => {
+      try {
+        console.log(student);
+        console.log(student.student.id, student.id, student.grade);
+        const response = await submitGrade(student.student.user_id, student.id, student.grade);
+        console.log(response);
+        alert("Grades submitted successfully");
+      }
+      catch (error) {
+        alert("Error submitting grades");
+        console.log(error);
+      }
+    });
   };
 
   return (
@@ -83,9 +97,9 @@ es
             {students.map((student , index) => (
                 <tr key={student.id}>
                     <td>{index + 1}</td>
-                    <td className="name-cell">{student.name}</td>
+                    <td className="name-cell">{student.student.name}</td>
                     <td className="grade-cell">
-                        <input type="text" value={student.grade || ''} onChange={(e) => handleGradeChange(e, student.id)} />
+                        <input type="text" onChange={(e) => handleGradeChange(e, student.id)} />
                     </td>
                 </tr>
             ))}

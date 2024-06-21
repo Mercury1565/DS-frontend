@@ -11,6 +11,7 @@ import StudentGrades from './components/Students/StudentGrades.jsx'
 import SubmitGrades from './components/Teacher/SubmitGrades.jsx'
 import AnnounceExam from './components/Teacher/AnnounceExam.jsx'
 import StudentCourseReg from './components/Students/StudentCourseReg.jsx'
+import AnnouncementPage from './components/Students/AnnouncementPage.jsx'
 
 
 function App() {
@@ -45,6 +46,8 @@ function App() {
             <Route path="/Grade-result" element={<StudentGrades />} />
             <Route path="/course-registration" element={<StudentCourseReg />} />
             <Route path="/Studentprofile" element={<StudentProfile />} />
+            <Route path="/Announcements" element={<AnnouncementPage />} />
+
 
             <Route path="/logout" element={<HomePage />} />
              

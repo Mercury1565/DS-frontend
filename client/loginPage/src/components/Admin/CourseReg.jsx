@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../styles/CourseReg.css';
 import AdminPage from './AdminPage';
+import { addCourse } from '../../bridge/addCourse';
 
 function CourseReg() {
     const [courses, setCourses] = useState([]);
@@ -38,7 +39,8 @@ function CourseReg() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setCourses([...courses, course]);
+        addCourse(course.department, course.courseName, course.year, course.semester, course.creditHour, course.prerequisites);
+        
         setCourse({
             department: '', 
             courseName: '', 
@@ -46,7 +48,6 @@ function CourseReg() {
             semester: '', 
             creditHour: '', 
             prerequisites: [''], 
-            corequisites: ['']
         });
     };
 
@@ -90,34 +91,7 @@ function CourseReg() {
                         <button className='courseReg-button' type="submit">Add Course</button>
                     </form>
                 </div>
-                <table className='courseReg-table'>
-                    <thead className='courseReg-thead'>
-                        <tr>
-                            <th className="courseReg-table-header c-th">Department</th>
-                            <th className="courseReg-table-header c-th">Course Name</th>
-                            <th className="courseReg-table-header c-th">Year</th>
-                            <th className="courseReg-table-header c-th">Semester</th>
-                            <th className="courseReg-table-header c-th">Credit Hour</th>
-                            <th className="courseReg-table-header c-th">Prerequisites</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {courses.map((course, index) => (
-                            <tr key={index}>
-                                <td className="courseReg-table-data c-td">{course.department}</td>
-                                <td className="courseReg-table-data c-td">{course.courseName}</td>
-                                <td className="courseReg-table-data c-td">{course.year}</td>
-                                <td className="courseReg-table-data c-td">{course.semester}</td>
-                                <td className="courseReg-table-data c-td">{course.creditHour}</td>
-                                <td className="courseReg-table-data">
-                                    {course.prerequisites.map((prerequisite, index) => (
-                                        <div key={index}>{prerequisite}</div>
-                                    ))}
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                
             </div>
         </>
     );

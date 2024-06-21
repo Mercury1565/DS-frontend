@@ -1,21 +1,29 @@
 import React, { useState } from 'react';
 import '../../styles/AnnounceExamStyle.css';
 import TeacherPage from './TeacherPage';
+import { createAnnouncement } from '../../bridge/createAnnouncemet';
 
 
 
 function AnnounceExam() {
-  const [exam, setExam] = useState({ course: '', year: '', semester: '', date: '', time: '' });
+  const [exam, setExam] = useState({ title: '', description: '', year: '', date: '', time: '' });
   const [scheduledExams, setScheduledExams] = useState([]);
 
   const handleChange = (e) => {
     setExam({ ...exam, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setScheduledExams([...scheduledExams, exam]);
-    setExam({ course: '', year: '', semester: '', date: '', time: '' }); // reset form
+    try {
+      await createAnnouncement(exam.title, exam.description, exam.date, exam.time);
+      alert("Exam scheduled successfully");
+    }
+    catch (error) {
+      alert("Error scheduling exam");
+    }
+
+    setExam({ title: '', description: '', date: '', time: '' }); // reset form
   };
 
   return (
@@ -25,26 +33,12 @@ function AnnounceExam() {
         <div className="form-card">
             <form onSubmit={handleSubmit}>
                 <label className="form-label">
-                Course:
-                <input type="text" name="course" onChange={handleChange} className="form-input" />
+                Title:
+                <input type="text" name="title" onChange={handleChange} className="form-input" />
                 </label>
                 <label className="form-label">
-                Year:
-                <input type="text" name="year" onChange={handleChange} className="form-input" />
-                </label>
-                <label className="form-label">
-                Semester:
-                {/* <input type="" name="semester" onChange={handleChange} className="form-input" /> */}
-                <div className="form-input">
-                    <label className="radio-label">
-                    <input type="radio" name="semester" value="1" onChange={handleChange} />
-                    I
-                    </label>
-                    <label className="radio-label">
-                    <input type="radio" name="semester" value="2" onChange={handleChange} />
-                    II
-                    </label>
-                </div>
+                Description:
+                <textarea type="text" name="description" onChange={handleChange} className="form-input" />
                 </label>
                 <label className="form-label">
                 Date:

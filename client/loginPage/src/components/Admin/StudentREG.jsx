@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../styles/StudentREG.css';
 import AdminPage from './AdminPage';
+import { createStudent } from '../../bridge/studentCreate';
 
 function StudentREG() {
     const [formData, setFormData] = useState({
@@ -9,9 +10,6 @@ function StudentREG() {
         department: '',
         email: '',
         password: '',
-        nationality: '',
-        phoneNumber: '',
-        address: ''
     });
 
     const handleChange = (e) => {
@@ -24,14 +22,17 @@ function StudentREG() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Here you would typically send formData to your server
         console.log(formData);
+        createStudent(formData.username, formData.password, formData.FirstName, formData.LastName, formData.email, formData.department);
     };
 
     return (
         <>
         <AdminPage />   
         <form className='studentForm' onSubmit={handleSubmit}>
+            <label className='StudentFormLabel'>Username</label>
+            <input className='StudentRegistrationInput' name="username" type="text" placeholder="username" value={formData.username} onChange={handleChange} />
+
             <label className='StudentFormLabel'>First Name</label>
             <input className='StudentRegistrationInput' name="FirstName" type="text" placeholder="Full Name" value={formData.fullName} onChange={handleChange} />
             
@@ -46,10 +47,6 @@ function StudentREG() {
 
             <label className='StudentFormLabel'>Password</label>
             <input className='StudentRegistrationInputInput' name="password" type="password" placeholder="Password" value={formData.password} onChange={handleChange} />
-
-            <label className='StudentFormLabel'>Phone Number</label>
-            <input className='StudentRegistrationInput' name="phoneNumber" type="text" placeholder="Phone Number" value={formData.phoneNumber} onChange={handleChange} />
-
 
             <button className='StudentsubmitButton' type="submit">Submit</button>
         </form>

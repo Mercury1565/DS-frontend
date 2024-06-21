@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/TeacherProfile.css';
 import TeacherPage from './TeacherPage';
+import { staffProfileFetch } from '../../bridge/profile';
 
 
 function TeacherProfile() {
@@ -9,20 +10,21 @@ function TeacherProfile() {
     id: '',
     email: '',
     department: '',
-
-
   });
 
   useEffect(() => {
-    // Fetch teacher profile data from an API or local storage
-    // This is a placeholder for fetching logic
-    const fetchedProfile = {
-      name: 'Jane Doe',
-      id: 'T12345678',
-      email: 'jane.doe@university.edu',
-      department: 'Mathematics',
-    };
-    setTeacherProfile(fetchedProfile);
+    async function fetchData() {
+      try {
+        const fetchedProfile = await staffProfileFetch();
+        setTeacherProfile(fetchedProfile);
+      }
+      catch (error) {
+        alert("Error fetching Teacher Profile");
+        console.log(error);
+      }
+    }
+    fetchData();
+    
   }, []);
 
   return (
@@ -32,9 +34,9 @@ function TeacherProfile() {
       <h2>Teacher Profile</h2>
       <div className="TeacherProfileDetails">
         <p><strong>Name:</strong> {teacherProfile.name}</p>
-        <p><strong>ID:</strong> {teacherProfile.id}</p>
+        <p><strong>ID:</strong> {teacherProfile.username}</p>
         <p><strong>Email:</strong> {teacherProfile.email}</p>
-        <p><strong>Department:</strong> {teacherProfile.department}</p>
+        <p><strong>Department:</strong> {teacherProfile.department_name}</p>
         
       </div>
     </div>

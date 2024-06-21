@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/AdminProfile.css';
 import AdminPage from './AdminPage';
+import { adminProfileFetch } from '../../bridge/profile';
 
 
 function AdminProfile() {
@@ -12,15 +13,17 @@ function AdminProfile() {
   });
 
   useEffect(() => {
-    // Fetch admin profile data from an API or local storage
-    // This is a placeholder for fetching logic
-    const fetchedProfile = {
-      name: 'John Smith',
-      id: 'A12345678',
-      email: 'john.smith@university.edu',
-      role: 'University Administrator',
-    };
-    setAdminProfile(fetchedProfile);
+
+    async function fetchData() {
+      try {
+        const respone = await adminProfileFetch();
+        setAdminProfile(respone);
+      }
+      catch (error) {
+        alert("We can not fetch profile");
+      }
+    }
+    fetchData();
   }, []);
 
   return (
@@ -30,9 +33,9 @@ function AdminProfile() {
       <h2>Admin Profile</h2>
       <div className="AdminProfileDetails">
         <p><strong>Name:</strong> {adminProfile.name}</p>
-        <p><strong>ID:</strong> {adminProfile.id}</p>
+        <p><strong>ID:</strong> {adminProfile.username}</p>
         <p><strong>Email:</strong> {adminProfile.email}</p>
-        <p><strong>Role:</strong> {adminProfile.role}</p>
+        <p><strong>Role:</strong>Admin</p>
         
       </div>
     </div>
